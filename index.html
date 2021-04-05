@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="env.js"></script>
     <title>Lateral Thinking Puzzles</title>
-
+    <script>
+        function onLoad() {
+          document.getElementById("publicIP").innerHTML = env.PublicIP;
+          document.getElementById("privateIP").innerHTML = env.PrivateIP;
+        }
+      </script>
     <style type="text/css">
         .center{
             text-align: center;
@@ -24,9 +30,9 @@
     </style>
 </head>
 
-<body>
-    <h4>Public IP ${PublicIP}</h4>
-    <h4>Public IP ${PrivateIP}</h4>
+<body onload="onLoad()">
+    <h4 >Public IP <span id="publicIP"></span></h4>
+    <h4 id="privateIP">Public IP  <span id="privateIP"></span></h4>
     <h1 class="center">Lateral Thinking Puzzles for Fun </h1>
     <img class="center" style="width: 60%;" src="https://s3.amazonaws.com/lateral.thinking/Lateral-Thinking-Questions-Answered.webp" alt="">
     <section class="puzzle">
