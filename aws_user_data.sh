@@ -8,7 +8,7 @@ PubIP=$(curl http://checkip.amazonaws.com)
 PrivateIP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 # clone website project
-git clone https://github.com/LightStein/aws_task_web_part.git
+git clone --branch second_website --single-branch https://github.com/LightStein/aws_task_web_part.git
 # remove default index
 rm var/www/html/index.html
 # copy project's index to the directory that will be hosted
