@@ -6,14 +6,6 @@ systemctl start httpd
 systemctl enable httpd
 yum install git -y
 
-# create variables
-PublicIP=$(curl http://checkip.amazonaws.com) # issue: no value assigned
-PrivateIP=$(echo curl http://169.254.169.254/latest/meta-data/local-ipv4) # issue: no value assigned
-# check why variables aren't asssigned ip addresses
-echo $PublicIP > /var/www/PublicIP.txt # ip address is written in this file
-echo $PrivateIP > /var/www/PrivateIP.txt # issue: this file is empty
-
-cd /var/www
 # clone website project
 git clone https://github.com/LightStein/aws_task_web_part.git
 # remove default index

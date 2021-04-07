@@ -1,4 +1,8 @@
+PublicIP=$(curl http://checkip.amazonaws.com)
+PrivateIP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
+public="  PublicIP: $PublicIP"
+private=" PrivateIP: $PrivateIP"
 echo "env = {"
-echo "  PublicIP: '$PublicIP',"
-echo "  PrivateIP: '$PrivateIP'"
+echo $public
+echo $private
 echo "}"
